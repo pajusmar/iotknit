@@ -12,7 +12,7 @@ import paho.mqtt.client as mqtt
 class ThingConnector():
     def __init__(self, mqtt_host):
         # TODO: add username/password/tsl
-        self.client = mqtt.Client()
+        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
         self.client.connect(mqtt_host)  # need to connect before subscribe
         # TODO: implement re-connect
         self.mqtt_host = mqtt_host
